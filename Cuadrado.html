@@ -4,7 +4,7 @@
   <title>Primer ejercicio JAVA</title>
 </head>
 <body>
-  <div id="cuadrado1"  class="cuadrado1">  </div>
+
 
   <style>
   .cuadrado1{
@@ -18,20 +18,41 @@
 
   }
   </style>
+  <div id="cuadrado1"  class="cuadrado1">  </div>
 <script type="text/javascript">
-  function ocultar() {
+  function keyboard (key) {
+    //console.log(key.keycode)
 
-    cuadrado1.style.visibility = "hidden";
-}
-  /*
-  function visible() {
-      cuadrado1 = document.getElementById("cuadrado1");
-      cuadrado1.style.visibility = "visible";
-  }
-*/
-  cuadrado1.addEventListener("click",ocultar)
-  cuadrado1 = document.getElementById("cuadrado1");
-  if (cuadrado1.style.backgroundColor="white")
+    if (key.keyCode == 39) {
+      console.log("right");
+      x = x + dx;
+    } else if (key.keyCode == 37) {
+      console.log("left");
+      x = x - dx;
+    } else if (key.keyCode == 38) {
+      console.log("Top");
+      y = y - dy;
+    } else if (key.keyCode == 40) {
+      console.log("down");
+        y = y + dy;
+    }
+
+
+    cuadrado1.style.left =  x + "px";
+    cuadrado1.style.top = y + "px";
+    }
+
+cuadrado1 = document.getElementById("cuadrado1");
+document.addEventListener("keydown", keyboard)
+
+x = 100;
+dx = 50;
+y = 100;
+dy = 50;
+cuadrado1.style.left =  x + "px";
+cuadrado1.style.top = y + "px";
+
+
 
 </script>
 
