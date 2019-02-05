@@ -17,11 +17,27 @@
     top: 100px
 
   }
+
+  .fondo{
+    background-color: red;
+    width: 1000px;
+    height: 1000px;
+    position: relative;
+    top: "100px"
+    left: "100px"
+  }
+
   </style>
-  <div id="cuadrado1"  class="cuadrado1">  </div>
+  <div id="fondo"  class="fondo">  </div>
+<div id="cuadrado1"  class="cuadrado1">  </div>
+
 <script type="text/javascript">
   function keyboard (key) {
     //console.log(key.keycode)
+    if ((x<=50)||(x+100>=900)||(y>=900)||(y+100>=900)) {
+
+    }else{
+
 
     if (key.keyCode == 39) {
       console.log("right");
@@ -36,11 +52,13 @@
       console.log("down");
         y = y + dy;
     }
-
+    }
 
     cuadrado1.style.left =  x + "px";
     cuadrado1.style.top = y + "px";
+
     }
+
 
 cuadrado1 = document.getElementById("cuadrado1");
 document.addEventListener("keydown", keyboard)
